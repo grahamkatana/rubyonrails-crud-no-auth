@@ -1,17 +1,28 @@
-<div id="<%= dom_id entry %>">
-  <p>
-    <strong>Title:</strong>
-    <%= entry.title %>
-  </p>
+<div class="column is-one-quarter mt-3">
+    <div class="card">
+        <header class="navbar is-secondary">
+            <p  class="card-header-title">
+                <%= entry.title %>
+            </p>
+        </header>
+        <div class="card-content">
+            <div class="content">
+                <p><span class="has-text-weight-bold">
+                        <%= entry.carbohydrates %>
+                    </span> grams</p>
+                <p><span class="has-text-weight-bold">
+                        <%= entry.proteins %>
+                    </span> grams</p>
+                <p><span class="italic">
+                       Created <%= time_ago_in_words(entry.created_at) %>
+                    </span> ago</p>
+            </div>
+        </div>
 
-  <p>
-    <strong>Carbohydrates:</strong>
-    <%= entry.carbohydrates %>
-  </p>
+        <div class="card-footer">
+            <%= link_to "Show" , entry,class:"card-footer-item" %>
+            <%= link_to "Edit" , edit_entry_path(entry),class:"card-footer-item" %>
+        </div>
 
-  <p>
-    <strong>Proteins:</strong>
-    <%= entry.proteins %>
-  </p>
-
+    </div>
 </div>
